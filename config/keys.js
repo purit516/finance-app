@@ -1,2 +1,3 @@
-export const mongoURI =
-  "mongodb+srv://purit516:<Patakancharmsala9$>@financedb.mif32v5.mongodb.net/?retryWrites=true&w=majority";
+export const mongoURI = process.env.MONGO_URI;
+
+export const secretOrKey = "secret";
