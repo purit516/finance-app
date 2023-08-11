@@ -1,15 +1,14 @@
-import { Router } from "express";
-const router = Router();
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import keys from "../../config/keys";
+const express = require("express");
+const router = express.Router();
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
 
 // Load input validation
-import validateRegisterInput from "../../validation/register";
-import validateLoginInput from "../../validation/login";
+const validateRegisterInput = require("../../validation/register");
+const validateLoginInput = require("../../validation/login");
 // Load User model
-import User from "../../models/User";
-
+const User = require("../../models/User");
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -43,3 +42,5 @@ router.post("/register", (req, res) => {
     }
   });
 });
+
+module.exports = router;
